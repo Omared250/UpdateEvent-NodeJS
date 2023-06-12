@@ -1,6 +1,6 @@
 const express = require('express');
 // const { dbConnection } = require('./dataBase/config');
-// require('dotenv').config();
+require('dotenv').config();
 
 
 // create express server
@@ -17,15 +17,9 @@ app.use( express.static('public') );
 
 // routes
 // app.use('/api/events', require('./routes/events'));
-app.get('/', (re, res) => {
-    console.log('/ required');
-    res.json({
-        ok: true
-    });
-})
 
 
 // Listening
-app.listen( 4002, () => {
-    console.log(`Server running on port ${ 4002 }`);
+app.listen( process.env.PORT, () => {
+    console.log(`Server running on port ${ process.env.PORT }`);
 } )
