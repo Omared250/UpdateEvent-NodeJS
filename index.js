@@ -16,7 +16,7 @@ app.use( express.static('public') );
 // app.use( express.json() );
 
 // routes
-// app.use('/api/events', require('./routes/events'));
+app.use('/api/events', require('./routes/events'));
 
 
 // Listening
