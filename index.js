@@ -10,7 +10,7 @@ const app = express();
 // dbConnection();
 
 // Public Directory
-// app.use( express.static('public') );
+app.use( express.static('public') );
 
 // read and parse body
 // app.use( express.json() );
