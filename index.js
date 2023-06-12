@@ -1,5 +1,5 @@
 const express = require('express');
-// const { dbConnection } = require('./dataBase/config');
+const { dbConnection } = require('./database/config');
 require('dotenv').config();
 
 
@@ -7,13 +7,13 @@ require('dotenv').config();
 const app = express();
 
 // DataBase
-// dbConnection();
+dbConnection();
 
 // Public Directory
 app.use( express.static('public') );
 
 // read and parse body
-// app.use( express.json() );
+app.use( express.json() );
 
 // routes
 app.use('/api/events', require('./routes/events'));
