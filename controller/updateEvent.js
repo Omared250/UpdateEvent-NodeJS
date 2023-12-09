@@ -36,6 +36,8 @@ const updateEvent = async( req, res = response ) => {
             ok: true,
             event: updatedEvent
         });
+
+        logger.info('Event Updated', { newEvent })
         
     } catch (err) {
         console.log(err);
