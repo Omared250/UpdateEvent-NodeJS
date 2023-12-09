@@ -1,5 +1,6 @@
 const { response } = require("express");
 const Event = require('../models/Event');
+const logger = require("../winston-config");
 
 const updateEvent = async( req, res = response ) => {
 
@@ -38,6 +39,10 @@ const updateEvent = async( req, res = response ) => {
         
     } catch (err) {
         console.log(err);
+        logger.error('Error: ', {
+            message: err.message,
+            stack: err.stack
+        });
         res.status(500).json({
             ok: false,
             msg: 'Yous should contact admin'
